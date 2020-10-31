@@ -53,4 +53,17 @@ class Business(models.Model):
         return businesses
 
 
+class Post(models.Model):
+    title = models.CharField(max_length = 60)
+    image = models.ImageField(upload_to = 'image/')
+    description = models.TextField()
+    user = models.ForeignKey(User,on_delete=models.CASCADE,blank=True,null=True)
+    pub_date = models.DateTimeField(auto_now_add=True, null=True)
 
+    def save_post(self):
+        self.save()
+
+    @classmethod
+    def save_post(cls):
+        projects=cls.objects.filter()
+        return posts
