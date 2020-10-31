@@ -1,13 +1,23 @@
 <div class="container" style="margin-top: 15px;">
-    {% if user.is_authenticated %}
-    <a href="/" style="color: cornsilk; font-size: large;"><strong>NeighborHood</strong></a>
-    <a href="/" style="color: orangered; padding-left: 20px;"><strong><i class="glyphicon glyphicon-home"></i> Home</strong></a>
-    <a href="/" style="color: orangered; padding-left: 10px;"><strong><i class="glyphicon glyphicon-user"></i> Profile</strong></a>
-    <a href="/" style="color: orangered; padding-left: 10px;"><strong><i class="glyphicon glyphicon-plus"></i> Post</strong></a>
-    <a  href="/logout" style="color: orangered; padding-left: 10px;"><strong><i class="glyphicon glyphicon-log-out"></i> Log Out</strong></a>
-    {% else %} 
-    <a href="/accounts/login" style="color: orangered; padding-left: 10px;"><strong><i class="glyphicon glyphicon-log-out"></i> Log Out</strong></a>
-    {% endif %}
-</div>
+    <div class="row">
+        <div class="col-md-12">
+            {% if user.is_authenticated %}
+            <a href="/" style="color: cornsilk; font-size: large;"><strong>NeighborHood</strong></a>
+            <a href="/" style="color: orangered; padding-left: 20px;"><strong><i class="glyphicon glyphicon-home"></i>
+                    Home</strong></a>
+            <a href="/" style="color: orangered; padding-left: 10px;"><strong><i class="glyphicon glyphicon-user"></i>
+                    Profile</strong></a>
+            <a href="/" style="color: orangered; padding-left: 10px;"><strong><i class="glyphicon glyphicon-plus"></i>
+                    Post</strong></a>
+            <a href="/admin" style="color: orangered; padding-left: 10px;"><strong><i
+                        class="glyphicon glyphicon-lock"></i> Admin</strong></a>
+            <a href="/logout" style="color: orangered; padding-left: 10px;"><strong><i
+                        class="glyphicon glyphicon-log-out"></i> Log Out</strong></a>
+            {% else %}
+            <a href="/accounts/login" style="color: orangered; padding-left: 10px;"><strong><i
+                        class="glyphicon glyphicon-log-out"></i> Log Out</strong></a>
+            {% endif %}
 
-  
+        </div>
+    </div>
+</div>
