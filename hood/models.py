@@ -37,3 +37,20 @@ class Profile(models.Model):
     def save_profile(cls):
         profile=cls.objects.filter()
         return profile
+
+class Business(models.Model):
+    name = models.CharField(max_length = 60)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    hood_id = models.ForeignKey(NeighborHood, on_delete=models.CASCADE)
+    email = models.CharField(max_length = 100)
+
+    def save_business(self):
+        self.save()
+
+    @classmethod
+    def save_business(cls):
+        businesses = cls.objects.filter()
+        return businesses
+
+
+
