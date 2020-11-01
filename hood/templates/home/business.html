@@ -1,0 +1,23 @@
+{% extends 'home/base.html' %}
+{% block content %}
+{{block.super}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card" style="background-color: paleturquoise;">
+                {% for business in businesses %}
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                      <h4>{{business.name}}</h4>
+                      <p>{{business.email}}</p>
+                      
+                  </li>
+                </ul>
+                {% endfor %}
+              </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
