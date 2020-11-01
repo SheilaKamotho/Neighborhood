@@ -35,6 +35,10 @@ def business(request):
     return render(request, 'home/business.html',{"businesses":businesses})
 
 @login_required(login_url='/accounts/login/')
+def about(request):
+    return render(request, 'home/about.html')
+
+@login_required(login_url='/accounts/login/')
 def search_results(request):
 
     if 'business' in request.GET and request.GET["business"]:
