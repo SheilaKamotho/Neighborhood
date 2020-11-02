@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.http  import HttpResponse
 from django.contrib.auth.decorators import login_required
 from .models import Profile, Post, Business
-from .forms import NewPostForm
+from .forms import NewPostForm, UpdateUser, UpdateProfile
 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
@@ -58,3 +58,27 @@ def search_results(request):
 
 def profile(request):
     return render(request, 'home/profile.html')
+
+# @login_required
+# def posted_by(request, user_id):
+#     user=get_object_or_404(User,pk=user_id)
+#     return render(request,'home/posted_by.html', {'user':user})
+
+
+@login_required
+def update_profile(request):
+    profile = Profile(user=request.user)
+
+    update_user=UpdateUser(request.POST,instance=request.user)
+    update_profile=UpdateProfile(request.POST,request.FILES,instance=profile)
+    if update_user.is_valid() and update_profile.is_valid():
+        update_user.save()
+        update_profile.save()
+        
+        # messages.success(request, 'Profile Updated Successfully')
+        return redirect('profile')
+    
+    else:
+        update_user=UpdateUser(instance=request.user)
+        update_profile=UpdateProfile(instance=profile)
+    return render(request, 'home/edit_profile.html',{'update_user':update_user,'update_profile':update_profile})

@@ -5,11 +5,15 @@
     <div class="row">
         <div class="col-md-12">
             <div class="jumbotron">
-               <strong style="font-size: 50px; padding-left: 30px;">{{user.username}}</strong><hr>
-               <span style="padding-left: 30px;">{{user.email}}</span><br>
-   
+                <strong style="font-size: 50px; padding-left: 30px;">{{user.username}}</strong>
+                <hr>
+                <span style="padding-left: 30px;">{{user.email}}</span><br>
+                <h4 style="padding-left:30px ;">{{user.profile.neighborhood}}</h4>
+                <i style="padding-left:30px ;" class="glyphicon glyphicon-pencil"></i><a href="{% url 'edit_profile'%}"> Edit</a>
+                
+               
             </div>
-         </div>   
+        </div>
 
     </div>
 </div>

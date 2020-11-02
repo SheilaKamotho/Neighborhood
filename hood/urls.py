@@ -11,6 +11,7 @@ urlpatterns=[
     url(r'^about/$',views.about,name = 'about'),
     url(r'^search/', views.search_results, name='search_results'),
     url(r'^user/profile/', views.profile, name='profile'),
+    url(r'^update/user/',views.update_profile, name='edit_profile'),
     
 ]
 if settings.DEBUG:
