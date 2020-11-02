@@ -23,6 +23,15 @@ class NeighborHood(models.Model):
         hoods=cls.objects.filter()
         return hoods
 
+    def save_neighborhood(self):
+        self.save()
+    
+    def update_neighborhood(self):
+        self.update()
+
+    def delete_neighborhood():
+        self.delete()
+
 class Profile(models.Model):
     full_name = models.CharField(max_length = 60, null=True, blank=True)
     id_no = models.IntegerField( null=True, blank=True)
@@ -33,13 +42,20 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username} Profile'
 
-    def save_profile(self):
-        self.save()
 
     @classmethod
     def save_profile(cls):
         profile=cls.objects.filter()
         return profile
+
+    def save_profile(self):
+        self.save()
+    
+    def update_profile(self):
+        self.update()
+
+    def delete_profile():
+        self.delete()
 
     
 
@@ -56,6 +72,15 @@ class Business(models.Model):
     def save_business(cls):
         businesses = cls.objects.filter()
         return businesses
+
+    def save_business(self):
+        self.save()
+    
+    def update_business(self):
+        self.update()
+
+    def delete_business():
+        self.delete()
 
     @classmethod
     def search_by_name(cls,search_term):
