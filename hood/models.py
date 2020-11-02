@@ -38,6 +38,12 @@ class Profile(models.Model):
         profile=cls.objects.filter()
         return profile
 
+    def update_profile(self):
+        self.update()
+
+    def delete_profile():
+        self.delete()
+
 class Business(models.Model):
     name = models.CharField(max_length = 60)
     user = models.ForeignKey(User,on_delete=models.CASCADE)

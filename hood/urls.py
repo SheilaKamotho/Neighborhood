@@ -10,6 +10,7 @@ urlpatterns=[
     url(r'^contact/$',views.contact,name = 'contact'),
     url(r'^about/$',views.about,name = 'about'),
     url(r'^search/', views.search_results, name='search_results'),
+    url(r'^user/profile/', views.profile, name='profile'),
     
 ]
 if settings.DEBUG:

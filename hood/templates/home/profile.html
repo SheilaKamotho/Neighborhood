@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+{% block content %}
+{{block.super}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron">
+               <strong style="font-size: 50px; padding-left: 30px;">{{user.username}}</strong><hr>
+               <span style="padding-left: 30px;">{{user.email}}</span><br>
+   
+            </div>
+         </div>   
+
+    </div>
+</div>
+
+{% endblock %}
