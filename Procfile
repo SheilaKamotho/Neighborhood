@@ -1,0 +1,1 @@
+web: gunicorn phood.wsgi --log-file -
